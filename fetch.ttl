@@ -19,4 +19,9 @@
     js:output <feed/writer>;
     js:url <https://waterkwaliteit-brugge-ldes.kindflower-25e41809.westeurope.azurecontainerapps.io/Waterkwaliteit/latestView>;  # ldes-server or localhost
     js:savePath <test.json>;.
+
+
+<debug/writer> a :FileWriterChannel;
+               :fileOnReplace "false"^^xsd:boolean;
+               :filePath <debug-bucketized.ttl>.
   
