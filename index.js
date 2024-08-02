@@ -1,3 +1,40 @@
+import { Stream, Writer } from "node_modules/@rdfc/js-runner";
+import { Readable } from "stream";
+import rdf from "rdf-ext";
+
+@param incoming 
+@param outgoing 
+@param mime 
+
+
+export function processor(
+    incoming: Stream<string>,
+    outgoing: Writer<string>,
+    mime = "text/turtle",
+): 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const express = require('express');
 const port = 5000;
 const app = express();
@@ -36,3 +73,4 @@ app.get('/', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server started and is listening to port ${port}`);
 });
+*/
