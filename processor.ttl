@@ -7,21 +7,42 @@
 
 js:DataReaderWriter a js:JsProcess;
     js:file <index.js>;
-    js:function "readWriteData";
+    js:function "processor";
     js:location <./>;
     js:mapping [
         a fno:Mapping;
         fno:parameterMapping [
             a fnom:PositionParameterMapping;
-            fnom:functionParameter "inputData";
+            fnom:functionParameter "incoming";
             fnom:implementationParameterPosition "0"^^xsd:int;
         ], [
             a fnom:PositionParameterMapping;
-            fnom:functionParameter "outputData";
+            fnom:functionParameter "outgoing";
             fnom:implementationParameterPosition "1"^^xsd:int;
         ], [
             a fnom:PositionParameterMapping;
             fnom:functionParameter "MIME type";
             fnom:implementationParameterPosition "2"^^xsd:int;
         ];
+    ].
+
+[ ] a sh:NodeShape;
+    sh:targetClass js:DataReaderWriter;
+    sh:property [
+        sh:class :ReaderChannel;
+        sh:path js:incoming;
+        sh:name "incoming";
+        sh:maxCount 1;
+        sh:minCount 1;
+    ], [
+        sh:class :WriterChannel;
+        sh:path js:outgoing;
+        sh:name "outgoing";
+        sh:maxCount 1;
+        sh:minCount 1;
+    ], [
+        sh:datatype xsd:string;
+        sh:path js:mime;
+        sh:name "MIME type";
+        sh:maxCount 1;
     ].
