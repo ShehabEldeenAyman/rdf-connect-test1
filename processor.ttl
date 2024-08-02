@@ -1,0 +1,27 @@
+@prefix js: <https://w3id.org/conn/js#>.
+@prefix fno: <https://w3id.org/function/ontology#>.
+@prefix fnom: <https://w3id.org/function/vocabulary/mapping#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <https://w3id.org/conn#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+
+js:DataReaderWriter a js:JsProcess;
+    js:file <index.js>;
+    js:function "readWriteData";
+    js:location <./>;
+    js:mapping [
+        a fno:Mapping;
+        fno:parameterMapping [
+            a fnom:PositionParameterMapping;
+            fnom:functionParameter "inputData";
+            fnom:implementationParameterPosition "0"^^xsd:int;
+        ], [
+            a fnom:PositionParameterMapping;
+            fnom:functionParameter "outputData";
+            fnom:implementationParameterPosition "1"^^xsd:int;
+        ], [
+            a fnom:PositionParameterMapping;
+            fnom:functionParameter "MIME type";
+            fnom:implementationParameterPosition "2"^^xsd:int;
+        ];
+    ].
