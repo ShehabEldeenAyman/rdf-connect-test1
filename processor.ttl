@@ -7,7 +7,7 @@
 
 js:DataReaderWriter a js:JsProcess;
     js:file <index.js>;
-    js:function "readWriteData";
+    js:function "processor";
     js:location <./>;
     js:mapping [
         a fno:Mapping;
