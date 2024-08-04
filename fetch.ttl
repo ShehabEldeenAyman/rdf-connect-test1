@@ -11,6 +11,9 @@
 # This imports our current processor’s SHACL shape
 <> owl:imports <processor.ttl>.
 
+<feed/writer> a js:JsWriterChannel .
+<feed/reader> a js:JsReaderChannel .
+
 [ ] a js:LdesClient;
     js:output <feed/writer>;
     js:url <https://waterkwaliteit-brugge-ldes.kindflower-25e41809.westeurope.azurecontainerapps.io/Waterkwaliteit/latestView>;  # ldes-server or localhost
@@ -20,8 +23,7 @@
    :writer <feed/writer> ;
    :reader <feed/reader> .
 
-<feed/writer> a js:JsWriterChannel .
-<feed/reader> a js:JsReaderChannel .
+
 
 [ ] a js:DataReaderWriter;
     js:incoming <feed/reader>;
